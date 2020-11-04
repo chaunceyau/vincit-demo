@@ -12,7 +12,7 @@ function calculateDistanceBetweenPoints(pointA, pointB) {
     return Math.sqrt((deltaX ^ 2) + (deltaY ^ 2));
 }
 function calculateTowerPhonePairWithBestStrength(phones, towers) {
-    var strongestPair = null;
+    var strongestPair;
     for (var _i = 0, phones_1 = phones; _i < phones_1.length; _i++) {
         var phone = phones_1[_i];
         for (var _a = 0, towers_1 = towers; _a < towers_1.length; _a++) {

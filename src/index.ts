@@ -1,5 +1,10 @@
 import { PHONES, TOWERS } from "./constants";
-import { PhoneInformation, TowerInformation, Coordinates } from "./interfaces";
+import {
+  PhoneInformation,
+  TowerInformation,
+  Coordinates,
+  PhoneTowerPair,
+} from "./interfaces";
 
 function calculateSignalStrength(radius: number, strength: number): number {
   return -113 - 40 * Math.log10(radius / strength);
@@ -16,11 +21,7 @@ function calculateTowerPhonePairWithBestStrength(
   phones: PhoneInformation[],
   towers: TowerInformation[]
 ) {
-  let strongestPair: {
-    phone: PhoneInformation;
-    tower: TowerInformation;
-    signalStrength: number;
-  } | null = null;
+  let strongestPair: PhoneTowerPair | undefined;
 
   for (const phone of phones) {
     for (const tower of towers) {
@@ -41,6 +42,7 @@ function calculateTowerPhonePairWithBestStrength(
       }
     }
   }
+
   return strongestPair;
 }
 

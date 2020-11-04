@@ -11,3 +11,9 @@ export interface TowerInformation extends Coordinates {
 export interface PhoneInformation extends Coordinates {
   id: number;
 }
+
+export interface PhoneTowerPair {
+  phone: PhoneInformation;
+  tower: TowerInformation;
+  signalStrength: number;
+}
